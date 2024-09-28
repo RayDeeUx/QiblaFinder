@@ -1,0 +1,62 @@
+{
+	"geode": "3.4.0",
+	"gd": {
+		"win": "2.206",
+		"mac": "2.206",
+		"android": "2.206"
+	},
+	"id": "raydeeux.qiblafinder",
+	"name": "QiblaFinder",
+	"version": "v1.0.0",
+	"developer": "RayDeeUx",
+	"description": "Find the Kabba/Qibla while playing Geometry Dash!",
+	"repository": "https://github.com/RayDeeUx/QiblaFinder",
+	"settings": {
+		"enabled": {
+			"name": "Enabled",
+			"description": "Toggles the mod.",
+			"type": "bool",
+			"default": true
+		},
+		"useAPI": {
+			"name": "Use AlAdhan API",
+			"description": "Use the AlAdhan API for finding the Kabba/Qibla, instead of local calculations.\n\n<cy>If this is enabled and there is no Internet available/the API is down, the mod will fall back to local calculations.</c>",
+			"type": "bool",
+			"default": true
+		},
+		"userLatitude": {
+			"name": "Your Latitude",
+			"description": "Insert your latitude coordinates here.\n\n<cy>A latitude of 0.00 represents the Equator, which crosses through Indonesia, Kiribati, Kenya, Colombia, and Ecuador.</c>",
+			"type": "float",
+			"default": 0.00,
+			"min": -90.00,
+			"max": 90.00,
+			"control": {
+				"input": true,
+				"slider": true,
+				"arrows": true,
+				"big-arrows": true,
+				"arrow-step": 5,
+				"big-arrow-step": 10,
+				"slider-step": 1
+			}
+		},
+		"userLongitude": {
+			"name": "Your Longitude",
+			"description": "Insert your longitude coordinates here.\n\n<cy>A longitude of 0.00 represents the Prime Meridian, which crosses through France, Spain, Algeria, Togo, and Ghana.</c>",
+			"type": "float",
+			"default": 0.00,
+			"min": -180.00,
+			"max": 180.00,
+			"control": {
+				"input": true,
+				"slider": true,
+				"arrows": true,
+				"big-arrows": true,
+				"arrow-step": 5,
+				"big-arrow-step": 10,
+				"slider-step": 1
+			}
+		}
+	}
+}
