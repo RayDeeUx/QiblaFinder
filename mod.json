@@ -8,10 +8,20 @@
 	"id": "raydeeux.qiblafinder",
 	"name": "QiblaFinder",
 	"version": "v1.0.0",
-	"developer": "RayDeeUx",
+	"developers": ["RayDeeUx", "Tech"],
 	"description": "Find the Kabba/Qibla while playing Geometry Dash!",
 	"repository": "https://github.com/RayDeeUx/QiblaFinder",
 	"settings": {
+		"privacyPolicy": {
+			"name": "Privacy Policy",
+			"desc": "QiblaFinder stores your latitude and longitude coordinates in its own mod settings. Other Geode mods may be able to access this information as they please.\n<cy>To minimize the likelihood of other mods misusing this information, please use</c> <cl>https://latlong.net/countries</c> <cy>and find the location closest to you to set your coordinates.</c>\n\nThe AlAdhan API does not remember your latitude and longitude coordinates. While the AlAdhan API is aware of your latitude/longitude coordinates when performing the calculations, none of this information is stored for future use.\n<cy>You are able to disable access to the AlAdhan API in the mod's settings.</c>\n<cy>If API access is unavailable or if you disable API access in the mod settings, QiblaFinder performs local calculations instead.</c>\n\n<cp>By installing/continuing to use QiblaFinder, you agree to these terms. To opt-out, simply disable or uninstall the QiblaFinder mod.</c>",
+			"type": "custom"
+		},
+		"latLongDotNet": {
+			"name": "Click me to find your nearest latitude/longitude coordinates!",
+			"desc": "This link is important for those who don't want to give their exact coordinates.\n\n<cy>By clicking</c> <cl>\"Open latlong.net\"</c><cy>, you agree that any coordinates you use from</c> <cl>latlong.net</c> <cy>represent the coordinates of the city closest to you, and agree to hold yourself</c> <cl>(and only yourself)</c> <cy>responsible for any inaccurate calculations performed by either</c> <cl>QiblaFinder</c> <cy>or the</c> <cl>AlAdhan API</c><cy>.</c>",
+			"type": "custom"
+		},
 		"enabled": {
 			"name": "Enabled",
 			"description": "Toggles the mod.",

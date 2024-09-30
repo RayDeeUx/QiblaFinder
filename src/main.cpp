@@ -1,9 +1,12 @@
 #include <Geode/loader/SettingEvent.hpp>
+#include "Settings.hpp"
 #include "Utils.hpp"
 
 using namespace geode::prelude;
 
 $execute {
+	Mod::get()->addCustomSetting<MySettingValue>("privacyPolicy", "none");
+	Mod::get()->addCustomSetting<MySettingValue>("latLongDotNet", "none");
 	listenForSettingChanges<double>("userLatitude", [](double userLatitude) {
 		if (Utils::getBool("useAPI")) Utils::findBearingWebAPI(userLatitude, Utils::getDouble("userLongitude"));
 		else Utils::findBearing();

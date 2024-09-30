@@ -11,6 +11,8 @@ add_library(${PROJECT_NAME} SHARED
         src/Utils.hpp
         src/Manager.cpp
         src/Manager.hpp
+        src/Settings.cpp
+        src/Settings.hpp
 
         src/main.cpp
         src/MenuLayer.cpp
