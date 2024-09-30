@@ -6,6 +6,18 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, MenuLayer) {
+	void addQiblaFinderButton(CCNode *node) {
+		auto btn = CCMenuItemSpriteExtra::create(
+			CircleButtonSprite::create(CCSprite::create("kaaba.png"_spr)),
+			this,
+			menu_selector(MyMenuLayer::onQiblaFinder)
+		);
+		btn->setID("qibla-finder-button"_spr);
+
+		node->addChild(btn);
+		node->updateLayout();
+	}
+
 	bool init() {
 		if (!MenuLayer::init()) {
 			return false;
@@ -23,10 +35,17 @@ class $modify(MyMenuLayer, MenuLayer) {
 			manager->userAgentBareMinimumAcquired = true;
 		}
 
+		if (!Utils::modEnabled()) return true;
+
+		auto bottomMenu = getChildByIDRecursive("bottom-menu");
+		if (!bottomMenu) return true;
+
+		addQiblaFinderButton(bottomMenu);
+
 		return true;
 	}
 
-	void onStats(CCObject*) {
-		Utils::showBearing();
+	void onQiblaFinder(CCObject*) {
+		if (Utils::modEnabled()) Utils::showBearing();
 	}
 };

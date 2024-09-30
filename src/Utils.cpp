@@ -74,6 +74,7 @@ namespace Utils {
 	}
 
 	void findBearingWebAPI(double userLatitude = getDouble("userLatitude"), double userLongitude = getDouble("userLongitude")) {
+		if (!Utils::modEnabled()) return;
 		const auto manager = Manager::getSharedInstance();
 		const auto gm = GameManager::get();
 		std::string chosenUserAgent = fmt::format("GeometryDash/{}/Geode/{}/{}/QiblaFinder/{}/{}/{}", manager->gameVer, manager->platformName, manager->loaderVer, manager->modVer, gm->m_playerName, gm->m_bootups);
@@ -146,6 +147,7 @@ namespace Utils {
 	}
 
 	void showBearing() {
+		if (!Utils::modEnabled()) return;
 		const auto manager = Manager::getSharedInstance();
 		const bool useAPI = Utils::getBool("useAPI");
 		if (useAPI) Utils::findBearingWebAPI(Utils::getDouble("userLatitude"), Utils::getDouble("userLongitude"));
